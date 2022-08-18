@@ -1,0 +1,17 @@
+<h1><%= @list.name %></h1>
+
+<h3>Movies</h3>
+
+<ul>
+  <% @movies.each do |movie| %>
+    <li><h4><%= movie.title %></h4>
+    <p><%= movie.overview %></p>
+    <p><%= @bookmark.comment %></p></li>
+  <% end %>
+</ul>
+
+<%= link_to '➕ Add bookmark', new_bookmark_path(@list), class: 'd-block' %>
+<br>
+<%= link_to '🗑️ Delete bookmark', bookmark_path(@list), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+<br>
+<%= link_to "⬅️ Back to all lists", lists_path %>
