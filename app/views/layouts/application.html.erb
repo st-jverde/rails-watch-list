@@ -11,6 +11,14 @@
   </head>
 
   <body>
+
+    <%# NAVBAR %>
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <div class="container-fluid">
+      <%= link_to "See all lists", "/lists", class: "navbar-brand" %>
+    </div>
+  </div>
+
     <div class="container mt-4">
       <%= yield %>
     </div>

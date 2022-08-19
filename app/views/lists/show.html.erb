@@ -2,16 +2,23 @@
 
 <h3>Movies</h3>
 
-<ul>
-  <% @movies.each do |movie| %>
-    <li><h4><%= movie.title %></h4>
-    <p><%= movie.overview %></p>
-    <p><%= @bookmark.comment %></p></li>
-  <% end %>
-</ul>
+<div class="movie-container p-3">
+  <ul class="d-flex p-3 mb-4">
+    <% @movies.each do |movie| %>
+      <div>
+        <li><h4><%= movie.title %></h4>
+        <%= image_tag movie.poster_url, style:"height: 250px; width: auto;", class: "float-rigth rounded float-right" %>
+        <p class="w-75"><%= movie.overview %></p>
+        <h4><em>"<%= movie.bookmarks.find_by(list: @list).comment %>"</em></h4></li>
+        <div class="mt-4">
+          <%= link_to '🗑️ Delete bookmark', bookmark_path(movie.bookmarks.find_by(list: @list)), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class:"d-flex flex-direction-row" %>
+        </div>
+      </div>
+    <% end %>
+  </ul>
 
-<%= link_to '➕ Add bookmark', new_bookmark_path(@list), class: 'd-block' %>
-<br>
-<%= link_to '🗑️ Delete bookmark', bookmark_path(@list), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+  <%= link_to '➕ Add bookmark', new_bookmark_path(@list) %>
+
+</div>
 <br>
 <%= link_to "⬅️ Back to all lists", lists_path %>
