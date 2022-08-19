@@ -1,20 +1,26 @@
-<div class="banner" style="background-image: ;">
+<div class="banner">
   <div class="container banner-text">
     <h1>My <strong>Movie</strong> Watchlist <strong>App</strong>!</h1>
     <p>List your favourite movies...</p>
-    <a class="btn btn-flat" href="#">Apply now</a>
+    <div class="btn btn-flat">
+      <%= link_to '➕ Add list', new_list_path, class: 'd-block' %>
+    </div>
   </div>
 </div>
 
 <%# <%= image_tag("movie_theater.jpg", %>
       <%# <% width: 400, height: 300, crop: :fill) %>
 
-<h1>Lists</h1>
+<h1 class="text-center mb-5">Lists</h1>
 
-<ul>
-  <% @lists.each do |list| %>
-    <li><%= link_to list.name, list_path(list.id) %></li>
-  <% end %>
-</ul>
-<br>
-<%= link_to '➕ Add list', new_list_path, class: 'd-block' %>
+<div class="container w-100">
+  <div class="row">
+    <div class="col-12 col-lg-6 d-flex justify-content-around w-100">
+      <% @lists.each do |list| %>
+        <%= link_to list.name, list_path(list.id) %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<hr>
