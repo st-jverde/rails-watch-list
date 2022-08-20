@@ -13,11 +13,13 @@
 
 <h1 class="text-center mb-5">Lists</h1>
 
-<div class="container w-100">
+<div class="container-lists">
   <div class="row">
-    <div class="col-12 col-lg-6 d-flex justify-content-around w-100">
+    <div class="col-12 col-lg-6 w-100 d-flex justify-content-around">
       <% @lists.each do |list| %>
-        <%= link_to list.name, list_path(list.id) %>
+        <div>
+          <%= link_to list.name, list_path(list.id) %>
+        </div>
       <% end %>
     </div>
   </div>
