@@ -13,16 +13,16 @@
 
 <h1 class="text-center mb-5">Lists</h1>
 
-<div class="container-lists">
-  <div class="row">
-    <div class="col-12 col-lg-6 w-100 d-flex justify-content-around">
-      <% @lists.each do |list| %>
-        <div>
-          <%= link_to list.name, list_path(list.id) %>
-        </div>
-      <% end %>
-    </div>
+<%# <div class="container-lists"> %>
+<div>
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%#= cl_image_path @lists.photo.key, height: 300, crop: :fill %>')">
+        <%= link_to list.name, list_path(list.id) %>
+      </div>
+    <% end %>
   </div>
 </div>
+<%# </div> %>
 
 <hr>
