@@ -21,7 +21,9 @@
   <%= link_to '➕ Add bookmark', new_bookmark_path(@list) %>
 
 </div>
+<hr>
 
 <%= link_to '🗑️ Delete list', list_path, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+<br>
 <br>
 <%= link_to "⬅️ Back to all lists", lists_path %>
