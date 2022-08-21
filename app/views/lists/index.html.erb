@@ -14,7 +14,8 @@
   <div class="cards">
     <% @lists.each do |list| %>
       <div class="card-category card-img">
-        <%= link_to list.name, list_path(list.id) %>
+          <%= cl_image_path list.photo.key, crop: :fill %>
+          <%= link_to list.name, list_path(list.id) %>
       </div>
     <% end %>
   </div>
