@@ -1,11 +1,12 @@
 .card-img {
   background-image: linear-gradient(rgba(0,0,0,0.4),
                                     rgba(0,0,0,0.4)),
-                                url('<%= cl_image_path list.photo.key %>');
+                                url('horror.png');
   background-size: cover;
   background-position: center;
   padding: 150px 0;
   margin-bottom: 50px;
+  color: white;
 }
 
 // Le wagon UI kit
