@@ -1,8 +1,12 @@
-// .card-img {
-//   height: 100%;
-//   width: 120px;
-//   object-fit: cover;
-// }
+.card-img {
+  background-image: linear-gradient(rgba(0,0,0,0.4),
+                                    rgba(0,0,0,0.4)),
+                                url('<%= cl_image_path list.photo.name.key %>');
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  margin-bottom: 50px;
+}
 
 // Le wagon UI kit
 

@@ -9,6 +9,7 @@
         <li><h4><%= movie.title %></h4>
         <%= image_tag movie.poster_url, style:"height: 250px; width: auto;", class: "float-rigth rounded float-right" %>
         <p class="w-75"><%= movie.overview %></p>
+        <p class="w-75"><strong>Rating:</strong> <%= movie.rating %></p>
         <h4><em>"<%= movie.bookmarks.find_by(list: @list).comment %>"</em></h4></li>
         <div class="mt-4">
           <%= link_to '🗑️ Delete bookmark', bookmark_path(movie.bookmarks.find_by(list: @list)), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class:"d-flex flex-direction-row" %>
